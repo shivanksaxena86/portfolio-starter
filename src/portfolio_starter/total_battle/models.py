@@ -29,6 +29,7 @@ class Recipe:
     time_hours: float
     inputs: list[ItemQty]
     outputs: list[ItemQty]
+    unlock_id: str | None = None
 
 
 @dataclass(frozen=True)

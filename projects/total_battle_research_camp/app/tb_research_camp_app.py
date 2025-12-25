@@ -16,7 +16,7 @@ from portfolio_starter.total_battle.config_io import (
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = PROJECT_ROOT / "data"
-RECIPES_PATH = DATA_DIR / "recipes.v0.json"
+RECIPES_PATH = DATA_DIR / "recipes.v1.json"
 BUILDINGS_PATH = DATA_DIR / "buildings.v0.json"
 
 TIER_BADGE = {
@@ -36,10 +36,10 @@ def badge(tier: str) -> str:
 
 
 def main() -> None:
-    st.set_page_config(page_title="Total Battle – Research Camp (v0)", layout="wide")
-    st.title("Total Battle – Research Camp Calculator (v0)")
+    st.set_page_config(page_title="Total Battle – Research Camp (v1)", layout="wide")
+    st.title("Total Battle – Research Camp Calculator (v1)")
     st.caption(
-        "v0 focuses on wiring data + quick ETA sanity checks. "
+        "v1 focuses on wiring data + quick ETA sanity checks. "
         "Next version (v1) will simulate full flows and recommend schedules/upgrades."
     )
 
@@ -124,7 +124,7 @@ def main() -> None:
     r1 = {r.id: r for r in recipes if r.id.startswith("orange_r1_")}
     shop_lvl = building_levels["shop"][int(shop_level)]
 
-    # Shop allocation heuristic for v0:
+    # Shop allocation heuristic for v1:
     # - If you have >=3 shops, assume 1 dedicated per material 24x7.
     # - If fewer, split evenly as a rough estimate.
     if num_shops >= 3:
@@ -152,7 +152,7 @@ def main() -> None:
     eta_c = eta_hours_for_target(rate_c, need_c)
 
     st.write(
-        f"Assumption for v0: **1 shop continuously per material** (if you have ≥3 shops). "
+        f"Assumption for v1: **1 shop continuously per material** (if you have ≥3 shops). "
         f"At Shop L{shop_level}, Orange r1 output per dedicated shop ≈ **{int(rate_a):,}/hour**."
     )
 

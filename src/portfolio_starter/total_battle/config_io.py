@@ -28,6 +28,7 @@ def load_recipes_and_unlocks(recipes_path: Path) -> tuple[list[Recipe], list[Unl
                 time_hours=float(r["time_hours"]),
                 inputs=[_itemqty(x) for x in r.get("inputs", [])],
                 outputs=[_itemqty(x) for x in r.get("outputs", [])],
+                unlock_id=r.get("unlock_id"),
             )
         )
 
