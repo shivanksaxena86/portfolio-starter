@@ -1,0 +1,46 @@
+# AI HUB - MODEL GARDEN CONFIGURATION (Feb 2026)
+# -----------------------------------
+
+text_models:
+  - name: "Gemini 2.0 Flash"
+    provider: "google"
+    # Ensure the prefix matches what LiteLLM expects for Google
+    model_id: "gemini/gemini-2.0-flash"  
+    safety: "high"
+
+  - name: "GPT-4o (Standard)"
+    provider: "openai"
+    # Ensure prefix matches what LiteLLM expects for OpenAI
+    model_id: "openai/gpt-4o"
+    safety: "high"
+    
+  # Note: We use xai/ prefix here to help our own logic identify the provider
+  - name: "Grok-3"
+    provider: "xai"
+    model_id: "xai/grok-3"
+    safety: "medium"
+
+image_models:
+  - name: "DALL-E 3"
+    provider: "openai"
+    model_id: "openai/dall-e-3"
+    safety: "high"
+  
+  - name: "Imagen 3 (Latest)"
+    provider: "google"
+    # UPDATED: Using the new Gemini 3.0 Image ID
+    model_id: "gemini/gemini-3-pro-image-preview" 
+    safety: "high"
+
+  # --- THE FIX IS HERE ---
+  - name: "Grok Imagine"
+    provider: "xai"
+    model_id: "xai/grok-imagine-image" # The correct generation model
+    safety: "medium"
+  # -----------------------
+
+  - name: "Stable Diffusion XL"
+    provider: "hf"
+    # Ensure prefix matches our logic check for HuggingFace
+    model_id: "hf/stabilityai/stable-diffusion-xl-base-1.0"
+    safety: "raw"

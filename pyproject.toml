@@ -19,6 +19,10 @@ pdfplumber = "^0.11.9"
 pikepdf = "^10.3.0"
 google-api-python-client = "^2.189.0"
 google-auth-oauthlib = "^1.2.4"
+litellm = "^1.81.8"
+pyyaml = "^6.0.3"
+python-dotenv = "^1.2.1"
+google-generativeai = "^0.8.6"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"

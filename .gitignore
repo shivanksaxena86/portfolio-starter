@@ -20,3 +20,21 @@ artifacts/
 .DS_Store
 .vscode/
 .idea/
+
+
+# Global Project Secrets (Catch-all)
+**/token.json
+**/credentials.json
+#**/*.json
+**/.env
+**/.env.*
+
+# Statement Sentry Secrets
+projects/statement_sentry/credentials.json
+projects/statement_sentry/token.json
+projects/statement_sentry/data/
+.env
+
+# AI Hub Secrets & Data
+token.json
+projects/ai_hub/chat_history.json
